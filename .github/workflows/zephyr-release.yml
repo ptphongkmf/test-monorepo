@@ -1,0 +1,23 @@
+name: Zephyr Release
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  zephyr-release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Run Zephyr Release
+        uses: Pandoriux/zephyr-release@canary
+        with:
+          config-format: "json"

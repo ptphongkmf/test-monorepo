@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Pandoriux/zephyr-release/refs/heads/canary/schemas/v1/config-v1.kebab.json",
+
+  "time-zone": "Asia/Ho_Chi_Minh",
+
+  "version-files": {
+    "path": "package.json",
+    "selector": "$.version"
+  },
+
+  "workspace": {
+    "packages/core": {
+      "name": "core",
+      "version-files": {
+        "path": "package.json",
+        "selector": "$.version"
+      }
+    },
+    "packages/cli": {
+      "name": "cli",
+      "version-files": {
+        "path": "package.json",
+        "selector": "$.version"
+      }
+    }
+  }
+}
